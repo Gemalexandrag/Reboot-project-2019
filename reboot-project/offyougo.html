@@ -1,0 +1,74 @@
+<html>
+
+<head>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+</head>
+
+<head>
+  <style media="screen">
+    body {
+      background-color: lightblue;
+    }
+
+    p {
+      font-size: 300px;
+      color: grey;
+    }
+
+    video {
+      top: 40px
+    }
+
+    a:link,
+    a:visited {
+      background-color: darkblue;
+      color: white;
+      padding: 15px 25px;
+      text-align: center;
+      text-decoration: none;
+      display: inline-block;
+    }
+  </style>
+</head>
+
+<body>
+
+
+  <a id="next" href="file:///Users/owner2/Desktop/2019-project-js/lookaround1.html">Next Page</a>
+
+
+  <p id="countdown">10</p>
+  <p>
+    <audio controls autoplay>
+    <source src="http://static1.grsites.com/archive/sounds/aircraft/aircraft008.mp3" autoplay>
+    Your browser does not support the video tag.
+  </audio>
+
+
+    <script>
+      //hide "next" button
+      $("#next").hide()
+
+      //Counter starts at 10
+      let n = 10;
+      let tm = setInterval(countDown, 1000);
+
+      function countDown() {
+        n--;
+        //when counter gets to zero...
+        if (n == 0) {
+          //clear the countdown
+          clearInterval(tm);
+          //show the button
+          $("#next").show()
+
+        }
+        //show the countdown
+        document.getElementById("countdown").innerHTML = n;
+      }
+    </script>
+
+
+</body>
+
+</html>

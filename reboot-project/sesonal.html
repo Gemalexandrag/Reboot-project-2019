@@ -1,0 +1,170 @@
+<html>
+
+<head>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <link href="https://fonts.googleapis.com/css?family=Quicksand&display=swap" rel="stylesheet">
+  <style>
+    body {
+      background-color: lightyellow;
+    }
+
+    h1 {
+      font-family: 'Quicksand', sans-serif;
+      font-size: 50px;
+    }
+
+    h2 {
+      font-family: 'Quicksand', sans-serif;
+    }
+
+    button {
+      background-color: grey;
+      color: white;
+      padding: 15px 32px;
+      text-align: center;
+      display: inline-block;
+      font-size: 75px;
+
+    }
+
+    a:link,
+    a:visited {
+      background-color: purple;
+      color: white;
+      padding: 15px 25px;
+      text-align: center;
+      text-decoration: none;
+      display: inline-block;
+    }
+  </style>
+</head>
+
+<body>
+  <center>
+    <h1>Seasonal</h1></center>
+  <center>
+    <h2>This planet changes it specialty every three months, <br> the seasons match up to earth's, <br> If you make it out you will be rewarded 2 puzzle pecices</h2></center>
+  <br></br>
+  <center>
+    <h2 id="demo"></h2></center>
+  <br>
+  <center><button class="w" id="tw">Ice skating</button>
+    <button class="w" id="fw">Snow boarding</button></center>
+  <center><button class="sp" id="fsp">Daisy</button>
+    <button class="sp" id="tsp">Sun flower</button></center>
+  <center><button class="s" id="ts">Watermelon</button>
+    <button class="s" id="fs">Apple</button></center>
+  <center><button class="fa" id="tf">Hat</button></center>
+  <button class="fa" id="tf">No hat</button></center>
+
+  <br></br>
+
+  <center><a href="file:///Users/owner2/Desktop/2019-project-js/Mine.html" id="nx">Next</a>
+    <a href="file:///Users/owner2/Desktop/2019-project-js/candyquiz.html" id="prev">Prev</a></center>
+  <script>
+    //hides all the buttons
+    $(".s").hide();
+    $(".s").hide();
+    $(".w").hide();
+    $(".w").hide();
+    $(".fa").hide();
+    $(".fa").hide();
+    $(".sp").hide();
+    $(".sp").hide();
+    //hides all the links/buttons
+    $("#nx").hide();
+    $("#prev").hide();
+
+    //when correct fruit is pressed in SUMMER
+    $("#ts").click(() => {
+      //alerts and makes button shows
+      alert("You chose a good fruit")
+      $("#nx").show();
+      $("#prev").show();
+    })
+    //when the wrong  fruit is chosen in summer...
+    $("#fs").click(() => {
+      //alerts...
+      alert("You chose the poision fruit")
+    })
+
+    //same for Winter
+    $("#tw").click(() => {
+
+      Alert("you chose the right, safe sport");
+      $("#nx").show();
+      $("#prev").show();
+    })
+    $("#fw").click(() => {
+      alert("To dangrous.")
+
+    })
+    //same for spring
+    $("#tsp").click(() => {
+
+      alert("Nice flower")
+      $("#nx").hide();
+      $("#prev").hide();
+    })
+    $("#fsp").click(() => {
+
+      alert("flower brings death.")
+    })
+    //same for fall (both are true)
+    $("#tf").click(() => {
+      alert("either one works")
+      $("#nx").show();
+      $("#prev").show();
+    })
+    $("#tf").click(() => {
+      alert("either one works")
+
+
+      $("#nx").show();
+      $("#prev").show();
+    })
+
+    //switch statement to get new season every three months
+    const month = new Date().getMonth();
+
+    switch (month) {
+
+      case 0:
+      case 1:
+      case 2:
+        let winter = "winter";
+        //says that this season is winter
+        document.getElementById("demo").innerHTML = `This season is ${winter}, theme is sports`;
+        break;
+
+      case 3:
+      case 4:
+      case 5:
+        let spring = "spring"
+        document.getElementById("demo").innerHTML = `This season is ${spring}, theme is flowers`;
+        break;
+
+      case 6:
+      case 7:
+      case 8:
+        let summer = "summer";
+        document.getElementById("demo").innerHTML = `This season is ${summer}, theme is fruit`;
+        $(".s").show();
+        $(".s").show();
+        break;
+
+      case 9:
+      case 10:
+      case 11:
+        let fall = "fall";
+        document.getElementById("demo").innerHTML = `This season is ${fall}, theme is hats`;
+        $(".fa").show();
+        $(".fa").show();
+        break;
+      default:
+        console.log("Something went wrong.");
+    }
+  </script>
+</body>
+
+</html>

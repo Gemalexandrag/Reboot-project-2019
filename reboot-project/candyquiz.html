@@ -1,0 +1,111 @@
+<html>
+
+<head>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <link href="https://fonts.googleapis.com/css?family=Ubuntu+Condensed&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Lobster+Two&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+
+  <style>
+    body {
+      background-color: pink;
+    }
+
+    .c {
+      font-size: 20px;
+      vertical-align: bottom;
+      text-align: center;
+      width: inherit;
+      font-family: 'Lobster Two', cursive;
+    }
+
+    h1 {
+      font-family: 'Lobster Two', cursive;
+      font-size: 60px;
+      text-decoration-line: underline;
+      text-decoration-style: wavy;
+      text-decoration-color: purple;
+    }
+
+    h2 {
+      font-family: 'Lobster Two', cursive;
+      font-size: 45px;
+    }
+
+    h2 {
+      font-family: 'Lobster Two', cursive;
+      font-size: 35px;
+    }
+
+    a:link,
+    a:visited {
+      background-color: purple;
+      color: white;
+      padding: 15px 25px;
+      text-align: center;
+      text-decoration: none;
+      display: inline-block;
+    }
+
+    button {
+      background-color: blue;
+      border: none;
+      color: white;
+      padding: 15px 32px;
+      text-align: center;
+      text-decoration: none;
+      display: inline-block;
+      font-size: 16px;
+    }
+  </style>
+  <center>
+    <h1>Candy land</h1></center>
+
+  <p></p>
+  <center>
+    <h2>you made it to Candy Land!<h2></center>
+  <center><h3>You managed to transfer to this planet!<br>Soft landing, and they are sweet there, so take <br> random piece of candy and a puzzle piece!</h3></center>
+<center><button>Candy button</button></center>
+
+<center><div><b class='c'>3 puzzle pieces and some.....</b></div></center>
+<br></br>
+<center><a class="reload" href="file:///Users/owner2/Desktop/2019-project-js/sesonal.html">next</a>
+<a class="reload" href="file:///Users/owner2/Desktop/2019-project-js/lookaround1.html">prev</a></center>
+
+<script>
+//hide button
+$("a").hide()
+
+//get random candy
+  function getRandomItem(arr) {
+return arr[Math.floor(Math.random() * arr.length)];
+}
+//candy selections
+  let candy = [
+     "Choclate",
+     "Gummybears",
+     "M&Ms",
+     "Gum",
+     "Warheads",
+     "Lemonheads"
+  ];
+
+  $("button").click(() => {
+//selects the <b> tag
+  let c = document.getElementsByClassName('c');
+   for (var i = 0; i < c.length; i += 1) {
+     //prints random candy
+     c[i].innerHTML = getRandomItem(candy);
+     //shows the button
+     $("a").show()
+   }
+
+})
+</script>
+
+
+</body>
+</html>
