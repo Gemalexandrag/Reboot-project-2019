@@ -1,0 +1,109 @@
+<html>
+
+<head>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+  <style>
+    body {
+      background-color: brown;
+    }
+
+    h1 {
+      font-size: 50px;
+    }
+
+    a:link,
+    a:visited {
+      background-color: darkblue;
+      color: white;
+      padding: 15px 25px;
+      text-align: center;
+      text-decoration: none;
+      display: inline-block;
+    }
+  </style>
+</head>
+
+<body>
+  <center>
+    <h1>Miners</h1>
+    <center>
+      <center>
+        <h2>They gave you three questions, <br>answer 2/3 right- <br> you get the puzzle peice</h2></center>
+
+      <form name="quiz" method="post" name="buttons" id="quiz" onsubmit="return false">
+        <p>1. How rare is a diamand?
+          <BR>
+          <input type="radio" name="question1" value="rare">Rare
+          <BR>
+          <input type="radio" name="question1" value="very rare">Very rare
+          <BR>
+          <input type="radio" name="question1" value="common">Common
+          <BR>
+          <input type="radio" name="question1" value="correct">Uncommon
+          <BR>
+        </p>
+
+        <p>2. strongest metal
+          <BR>
+          <input type="radio" name="question2" value="correct">Titanium
+          <BR>
+          <input type="radio" name="question2" value="copper">Copper
+          <BR>
+          <input type="radio" name="question2" value="brass">Brass
+          <BR>
+          <input type="radio" name="question2" value="gold">Gold
+          <BR>
+        </p>
+
+        <p>3. Which is not a gold mining tool?
+          <BR>
+          <input type="radio" name="question3" value="pan">Pan
+          <BR>
+          <input type="radio" name="question3" value="chisel">Chisel
+          <BR>
+          <input type="radio" name="question3" value="shovel">Shovel
+          <BR>
+          <input type="radio" name="question3" value="correct">Pitchfork
+          <BR>
+        </p>
+
+        <button class="submit" onclick="Cor();" type="submit">Submit</button>
+
+        <br></br>
+
+      </form>
+
+
+      <a id="next" href="file:///Users/owner2/Desktop/2019-project-js/Ending.html">next</a>
+      <a id="prev" href="file:///Users/owner2/Desktop/2019-project-js/sesonal.html">prev</a>
+      <script>
+        //hides buttons/links
+        $("#prev").hide()
+        $("#next").hide()
+        //calculates how many questions you got right
+        function Cor() {
+          var amountCorrect = 0;
+          for (var i = 1; i <= 45; i++) {
+            var radios = document.getElementsByName('question' + i);
+            for (var j = 0; j < radios.length; j++) {
+              var radio = radios[j];
+              if (radio.value == "correct" && radio.checked) {
+                amountCorrect++;
+              }
+            }
+          }
+          //If gotten more or equal to then you would pass
+          if (amountCorrect >= 2) {
+            alert(" You were awarded your last puzzle peice ")
+            $("#prev").show()
+            $("#next").show()
+
+          } else {
+            alert("Wrong. Google it next time.")
+          }
+        }
+      </script>
+</body>
+
+</html>
